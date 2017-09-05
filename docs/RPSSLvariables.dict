@@ -1,0 +1,154 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                      Variables from the RPSSL class
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+===============================================================================
+defined in self.__init__()
+===============================================================================
+self.sampleSize  - Integer Variable.
+    default = 0
+    Currently used to keep count of the number of rounds played as this will
+    be useful for weighting the probabilities
+    Augmented in self.updateStatistics()
+
+self.maxGames  - Integer User-resetable Constant  
+    default = 1
+    The number of games of n rounds to be played
+    ---- Currently Unused. ----
+
+self.maxRounds  - Integer User-resetable Constant 
+    default = 5
+    The number of rounds comprising one game.
+    Set in self.changeMaxRounds()
+    
+self.choices  - List Constant
+    default = gameRules.choices
+    A list loaded from gameRules.py that contains the full names of the choices
+    available to the player - eg "Rock"
+
+self.validGuesses  - List Constant
+    default = gameRules.validGuesses
+    A list loaded from gameRules.py that contains the shorthand names of the choices
+    available to the player - eg "ro"
+
+self.rules  - Dictionary Constant
+    default = gameRules.rules
+    A dictionary loaded from gameRules.py that contains tuples representing the
+    choices of the two players and the result from comparing them.
+    eg (1,3): {"winner": 1, "winStr": "Paper disproves Spock!"}
+
+self.help  - String Constant
+    default = gameRules.rulesHelp
+    A string loaded from gameRules.py that contains the rules to be printed
+    out for a help screen in a human understandable format.
+    Used by self.printRules()
+
+self.playerOneName  - String User-resetable Constant 
+    default = "Player One"
+    The name used for player one.
+    Set in self.changePlayerOneName()
+
+self.playerTwoName  - String User-resetable Constant 
+    default = "Player Two"
+    The name used for player two
+    Set in self.changePlayerTwoName()
+
+self.configChanged  - Integer Variable
+    default = 0
+    Used as a flag for self.shallISaveConfiguration()
+    Set in self.setGameplayMode()
+           self.changeMaxRounds()
+           self.changePlayerOneName()
+           self.changePlayerTwoName()
+
+===============================================================================
+defined in self.initPlayerOneVars()
+===============================================================================
+
+self.playerOneGuess  - Integer Variable
+    default = 0
+    Used to keep track of the current choice made by player one.
+    set in self.playARound()
+
+self.playerOneScore  - Integer Variable
+    default = 0
+    Used to keep track of the number of rounds won by player one within the
+    current game.
+    Set in self.adjustScores()
+
+===============================================================================
+defined in self.initPlayerTwoVars()
+===============================================================================
+
+self.playerTwoGuess  - Integer Variable
+    default = 0
+    Used to keep track of the current choice made by player two.
+    set in self.playARound()
+
+self.playerTwoScore  - Integer Variable
+    default = 0
+    Used to keep track of the number of rounds won by player two within the
+    current game.
+    Set in self.adjustScores()
+
+===============================================================================
+defined in self.initCurrentGameVars()
+===============================================================================
+
+self.drawsScore  - Integer Variable
+    default = 0
+    Used to keep track of the number of drawed rounds in the current game
+    Set in self.adjustScores()
+
+self.winner  - Integer Variable
+    default = 0
+    Used to keep track of the winner of the current round
+    Can be 1-player one, 2-player two, 0-draw
+    Set in self.calculateWinner()
+
+self.winString  - String Variable
+    default = "Draw, Nobody wins!"
+    Used to print out a meaningful result to the user
+    Set in self.calculateWinner()
+
+===============================================================================
+defined in self.initIntelligence()
+===============================================================================
+
+self.lastChoice  - Integer Variable
+    default = None
+    Used to keep track of the users last choice
+    Set in self.updateIntelligence()
+
+self.choiceBeforeLast  - Integer Variable
+    default = None
+    Used to keep track of the users choice one before the last one
+    Set in self.updateIntelligence()
+
+self.choice2BeforeLast  - Integer Variable
+    default = None
+    Used to keep track of the users choice two choices before the last one
+    Set in self.updateIntelligence()
+
+self.firstGuesses - Dictionary Variable Values
+    Used to keep track of the first choice made by the user in a game, keeps
+    a count for each option
+    -- Currently unused --
+
+self.oneMoveBack - Dictionary Variable Values
+    Keeps statistics for the users choice based upon what they chose one move
+    before; eg., the player has just chose rock before that they chose paper
+    so in the dictionary entry with the key value of paper one is added to
+    the subdictionary entry rock
+    Dictionary values updated in self.updateIntelligence()
+
+self.twoMovesBack - Dictionary Variable Values
+    Keeps statistics for the users choice based upon what they chose two moves
+    before; eg., before the current choice the player chose rock then lizard
+    Dictionary values updated in self.updateIntelligence()
+
+self.threeMovesBack - Dictionary Variable Values
+    Keeps statistics for the users choice based upon what they chose three moves
+    before; eg., before the current choice the player chose rock then lizard
+    then spock.
+    Dictionary values updated in self.updateIntelligence()

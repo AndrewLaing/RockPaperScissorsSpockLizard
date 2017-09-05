@@ -1,0 +1,394 @@
+
+###############################################################################
+###############################################################################
+###############################################################################
+
+This file contains help strings of the four main modules used to run the game.
+
+###############################################################################
+###############################################################################
+###############################################################################
+
+
+Help on module gui20:
+
+NAME
+    gui20
+
+FILE
+    /root/projects/RockPaperScissorsSpockLizard/Python_264_version/gui20.py
+
+DESCRIPTION
+    ###############################################################################
+    ## Program name : gui.py
+    ## Author       : Andrew Laing (parisianconnections@gmail.com)
+    ## Source       : Python 2.6.4
+    ## Purpose      : GUI for the RPSSL game.                
+    ## History      : Work started 29/09/2015
+    ###############################################################################
+
+CLASSES
+    RPSSLGui
+    
+    class RPSSLGui
+     |  Methods defined here:
+     |  
+     |  __init__(self, rpssl)
+     |  
+     |  aboutCallback(self)
+     |      Hide the options screen widgets and show the help screen ones.
+     |  
+     |  backCallback(self, n)
+     |      Hide current screen widgets and show the welcome screen ones.
+     |  
+     |  choiceCallback(self, choice)
+     |      Used to send choice to the classifier.
+     |  
+     |  createAboutScreen(self)
+     |      Create the widgets for about screen.
+     |  
+     |  createGameScreen(self)
+     |      Create the game screen widgets.
+     |  
+     |  createHelpScreen(self)
+     |      Create the widgets for the help screen.
+     |  
+     |  createHelpScreen1(self)
+     |      Create the widgets for help screen 1.
+     |  
+     |  createOptionsScreen(self)
+     |      Create the options screen widgets.
+     |  
+     |  createRPGScreen(self)
+     |      Create the rounds per game screen widgets.
+     |  
+     |  createResultScreen(self)
+     |      Create the result screen widgets.
+     |  
+     |  createWelcomeScreen(self)
+     |      Create the welcome screen widgets.
+     |  
+     |  createWidgets(self)
+     |  
+     |  helpCallback(self)
+     |      Hide the options screen widgets and show the help screen ones.
+     |  
+     |  hideAboutScreen(self)
+     |      Remove the widgets that make the about screen
+     |  
+     |  hideGameScreen(self, n)
+     |      Hide game screen widgets.
+     |  
+     |  hideHelpScreen(self)
+     |      Remove the widgets that make the help screen
+     |  
+     |  hideHelpScreen1(self)
+     |      Remove the widgets that make the help screen
+     |  
+     |  hideOptionsScreen(self)
+     |      Remove the widgets that make the welcome screen
+     |  
+     |  hideRPGScreen(self)
+     |      Remove the widgets that make the rounds per game screen
+     |  
+     |  hideResultScreen(self)
+     |      Remove the widgets that make the result screen
+     |  
+     |  hideWelcomeScreen(self)
+     |      Remove the widgets that make the welcome screen
+     |  
+     |  loadImages(self)
+     |  
+     |  mainGui(self)
+     |      Add the background image and logo to the window.
+     |  
+     |  nextCallback(self)
+     |      Hide the help screen widgets and show the help screen1 ones.
+     |  
+     |  optionsCallback(self)
+     |      Hide the welcome screen widgets and show the options screen ones.
+     |  
+     |  prevCallback(self)
+     |      Hide the help screen1 widgets and show the help screen ones.
+     |  
+     |  quitApplication(self)
+     |      Close the window and exit the program.
+     |  
+     |  setMainVariables(self)
+     |  
+     |  setRPGCallback(self)
+     |      Hide the option screen widgets and show the set rounds per game screen ones.
+     |  
+     |  showAboutScreen(self)
+     |      Add the about screen widgets to the main gui.
+     |  
+     |  showGameScreen(self)
+     |      Add the game screen widgets to the main gui.
+     |  
+     |  showHelpScreen(self)
+     |      Add the help screen widgets to the main gui.
+     |  
+     |  showHelpScreen1(self)
+     |      Add the help screen1 widgets to the main gui.
+     |  
+     |  showOptionsScreen(self)
+     |      Add the options screen to the main gui.
+     |  
+     |  showRPGScreen(self)
+     |      Add the rounds per game screen to the main gui.
+     |  
+     |  showResultScreen(self)
+     |      Add the result screen to the main gui.
+     |  
+     |  showWelcomeScreen(self)
+     |      Add the welcome screen to the main gui.
+     |  
+     |  startGame(self, n)
+     |      Clear the current screen widgets and show the game screen ones.
+
+
+###############################################################################
+###############################################################################
+###############################################################################
+
+Help on module rpssl:
+
+NAME
+    rpssl
+
+FILE
+    /root/projects/RockPaperScissorsSpockLizard/Python_264_version/rpssl.py
+
+DESCRIPTION
+    ###############################################################################
+    ## Program name : rpssl.py
+    ## Author       : Andrew Laing (parisianconnections@gmail.com)
+    ## Source       : Python 2.6.4
+    ## Purpose      : A game of Rock-Paper-Scissors-Spock-Lizard.
+    ## History      : Work started 29/09/2015
+    ###############################################################################
+
+CLASSES
+    __builtin__.object
+        RPSSL
+    
+    class RPSSL(__builtin__.object)
+     |  Methods defined here:
+     |  
+     |  __init__(self, loadCpk=0)
+     |      Init method for the RPSSL Class.
+     |      Loads the configuration file or creates one.
+     |  
+     |  adjustScores(self)
+     |      Adjust the stored scores for the current game.
+     |  
+     |  calculateWinner(self)
+     |      Calculate winner of round and update round winner data.
+     |      Called by self.playGame()
+     |  
+     |  changeMaxRounds(self, n)
+     |      Change number of rounds per game.
+     |  
+     |  convertGuessToInt(self, guess)
+     |      Convert the players guess string to an integer.
+     |      Called by self.getHumanChoice() and self.getProbableHumanChoice()
+     |  
+     |  getBotChoice(self, player)
+     |      Get and return the bots choice.
+     |      Called by self.playARound()
+     |  
+     |  getChoiceToDefeatHuman(self, guess)
+     |      Return an option that will defeat what the classifier
+     |      has calculated that the human player will choose.
+     |      Called by self.getBotChoice()
+     |  
+     |  getGameResult(self)
+     |      Return the result of the Game as a string.
+     |  
+     |  getProbableHumanChoice(self)
+     |      Creates a list of features and sends them to the classifier
+     |      to get a probable category.
+     |  
+     |  initBotStats(self)
+     |      Initialise Bot Statistic variables.
+     |      Called by self.initIntelligence()
+     |  
+     |  initCurrentGameVars(self)
+     |      Re/Initialise Current Game variables.
+     |      Called by self.__init__() and self.playNewGame()
+     |  
+     |  initHumanStats(self)
+     |      Initialise Human Statistic variables.
+     |      Called by self.initIntelligence()
+     |  
+     |  initIntelligence(self)
+     |      Initialise Intelligence variables.
+     |      Called by self.__init__()
+     |  
+     |  initPlayerOneVars(self)
+     |      Initialising Player One variables.
+     |      Called by self.__init__() and self.playNewGame()
+     |  
+     |  initPlayerTwoVars(self)
+     |      Re/Initialise Player One variables.
+     |      Called by self.__init__() and self.playNewGame()
+     |  
+     |  playARound(self, guess)
+     |      Play a whole round.
+     |  
+     |  playGame(self, choice)
+     |      Play a game.
+     |  
+     |  saveOnQuit(self)
+     |      Save the configuration and classifier when quitting the app.
+     |  
+     |  startGame(self)
+     |      Clear screen and start a new game.
+     |  
+     |  trainClassifier(self)
+     |      Send features and category to the classifier.
+     |      Called by self.playGame()
+     |  
+     |  updateBotStatsAndGetFeatures(self)
+     |      Update the stats stored for the bot then create
+     |      and return a list of features.
+     |      Called by self.trainClassifier()
+     |  
+     |  updateHumanStatsAndGetFeatures(self)
+     |      Update the stats stored for the human then create
+     |      and return a list of features.
+     |      Called by self.trainClassifier()
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+DATA
+    filename = 'classifier.py'
+
+
+###############################################################################
+###############################################################################
+###############################################################################
+
+Help on module classifier:
+
+NAME
+    classifier
+
+FILE
+    /root/projects/RockPaperScissorsSpockLizard/Python_264_version/classifier.py
+
+DESCRIPTION
+    ###############################################################################
+    ## Program name : classifier.py
+    ## Author       : Andrew Laing (parisianconnections@gmail.com)
+    ## Source       : Python 2.6.4
+    ## Purpose      : A Naive Bates classifier used to help the bot to make decisions.                
+    ## History      : Work started 29/09/2015
+    ###############################################################################
+
+CLASSES
+    __builtin__.object
+        naivebayes
+    
+    class naivebayes(__builtin__.object)
+     |  naivebayes classifier class.
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, loadCpk=0)
+     |  
+     |  catcount(self, cat)
+     |      Returns the number of items in a category from cc.
+     |      Called by self.fprob() and naivebayes.prob()
+     |  
+     |  categories(self)
+     |      Returns a list of all the categories in cc.
+     |      called by self.weightedprob() and naivebayes.classify()
+     |  
+     |  classify(self, features, default='ro')
+     |      Returns the category with the highest probability
+     |      calculated from the supplied features.
+     |      Called by rpssl.getProbableHumanChoice()
+     |  
+     |  docprob(self, features, cat)
+     |      Returns the probabilty of the category existing in all features
+     |      Called by self.prob()
+     |  
+     |  fcount(self, f, cat)
+     |      Returns the number of times that a feature has appeared
+     |      in a category from fc.
+     |      Called by self.fprob() and self.weightedprob()
+     |  
+     |  fprob(self, f, cat)
+     |      Return the probability of a feature appearing in a category.
+     |      Called by naivebayes.docprob()
+     |  
+     |  incc(self, cat)
+     |      Increases the count in cc of a category.
+     |      Called by self.train()
+     |  
+     |  incf(self, f, cat)
+     |      Increases the count in fc of a feature/category pair.
+     |      Called by self.train()
+     |  
+     |  prob(self, features, cat)
+     |      Returns the calculated probability for the category supplied.
+     |      Called by self.classify()
+     |  
+     |  saveCounts(self)
+     |      Save the count dictionaries cc and fc to cPickle.
+     |      Called by self.__init__() and rpssl.mainMenu()
+     |  
+     |  totalcount(self)
+     |      Returns the total number of unique items kept in cc.
+     |      Called by naivebayes.prob()
+     |  
+     |  train(self, features, cat)
+     |      Trains the classifier by incrementing the counts in cc and fc.
+     |      Called by rpssl.trainClassifier()
+     |  
+     |  weightedprob(self, f, cat, prf, weight=1.0, ap=0.20000000000000001)
+     |      Returns the weighted probability of a feature in a category.
+     |      Called by naivebayes.docprob()
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+
+###############################################################################
+###############################################################################
+###############################################################################
+
+
+Help on module utils:
+
+NAME
+    utils
+
+FILE
+    /root/projects/RockPaperScissorsSpockLizard/Python_264_version/utils.py
+
+FUNCTIONS
+    loadFromPickle(filename)
+        Return an object read from a cPickle file.
+    
+    saveToPickle(filename, toWrite)
+        Write out an object to a cPickle file.
+
+
+###############################################################################
+############################## END OF FILE ####################################
+###############################################################################
