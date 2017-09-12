@@ -1,8 +1,8 @@
 ###############################################################################
-## Module name  : rpssl.py
+## Filename     : rpssl.py
 ## Author       : Andrew Laing (parisianconnections@gmail.com)
 ## Source       : Python 3.5
-## Purpose      : The gameplay methods.
+## Description  : The gameplay methods for the RPSSL application.
 ## History      : Work started 29/09/2015
 ###############################################################################
 
@@ -43,7 +43,7 @@ class RPSSL(object):
             self.rules = gameRules.rules
 
             # For implementing strategy 2. ####################################
-            #  if probablilty is losing overall add the possiblity of a random
+            #  if using probablilty is losing, add the possiblity of a random
             #  choice being made by the bot
             self.strategy2percentage = 0.75
             self.sampleSize = 0   # total rounds played
@@ -218,7 +218,7 @@ class RPSSL(object):
 
     def getChoiceToDefeatHuman(self, guess):
         """
-        Return an option that will defeat what the classifier
+        Return an option which will defeat what the classifier
         has calculated that the human player will choose.
         Called by self.getBotChoice()
         """
@@ -263,7 +263,7 @@ class RPSSL(object):
 
     def getBotChoice(self, player):
         """
-        Get and return the bots choice.
+        Get and return the bot's choice.
         Called by self.playARound()
         """
         ## Get a number that is an index to the validGuesses list
@@ -307,7 +307,7 @@ class RPSSL(object):
         Calculate winner of round and update round winner data.
         Called by self.playGame()
         """
-        ## Create a tuple representing the players choices
+        ## Create a tuple representing the player's choices
         rulesKey = (self.playerOneGuess,self.playerTwoGuess)
         ## Find the winner from the rules dictionary
         self.winner    = self.rules[rulesKey]["winner"]
@@ -320,7 +320,7 @@ class RPSSL(object):
 
     def convertGuessToInt(self, guess):
         """
-        Convert the players guess string to an integer.
+        Convert the player's guess string to an integer.
         Called by self.getHumanChoice() and self.getProbableHumanChoice()
         """
         return self.validGuesses.index(guess)
