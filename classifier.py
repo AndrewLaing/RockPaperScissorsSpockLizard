@@ -1,8 +1,8 @@
 ###############################################################################
-## Module name  : classifier.py
+## Filename     : classifier.py
 ## Author       : Andrew Laing (parisianconnections@gmail.com)
 ## Source       : Python 3.5
-## Purpose      : Naive Bayesian Classifier used to help the bot learn how
+## Description  : Naive Bayesian Classifier used to help the bot learn how
 ##                to defeat the player.
 ## History      : Work started 29/09/2015
 ###############################################################################
