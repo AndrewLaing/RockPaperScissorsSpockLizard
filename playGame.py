@@ -1,8 +1,8 @@
 ###############################################################################
-## Module name  : playGame.py
+## Filename     : playGame.py
 ## Author       : Andrew Laing (parisianconnections@gmail.com)
 ## Source       : Python 3.5
-## Purpose      : A Tkinter GUI for the game;
+## Description  : A Tkinter GUI for the game;
 ## History      : Work started 29/09/2015
 ###############################################################################
 
@@ -96,7 +96,7 @@ class RPSSLGui:
         """
         self.rpssl.playGame(choice)
 
-        # Update canvas with image of bots choice
+        # Update canvas with image of bot's choice
         self.botChoiceCanvas_gs.create_image(0, 0, anchor=tkinter.NW,
                               image=self.botPhotos[self.rpssl.playerTwoGuess])
         self.botChoiceCanvas_gs.place(x=460, y=241)
