@@ -340,7 +340,7 @@ class RPSSL(object):
         Return the result of the Game as a string.
         """
         ## Create a string containing the final score
-        score = "%d:%d" % (self.playerOneScore,self.playerTwoScore)
+        score = "%d:%d" % (self.playerTwoScore, self.playerOneScore)
         ## Find out who won the game using conditional operator comparisons
         ## And return the result
         result = ""

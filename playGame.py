@@ -102,9 +102,9 @@ class RPSSLGui:
         self.botChoiceCanvas_gs.place(x=460, y=241)
 
         # Update scores on labels
-        self.botLabel_gs.config(text=str(self.rpssl.playerOneScore))
+        self.botLabel_gs.config(text=str(self.rpssl.playerTwoScore))
 
-        self.humanLabel_gs.config(text=str(self.rpssl.playerTwoScore))
+        self.humanLabel_gs.config(text=str(self.rpssl.playerOneScore))
 
         self.messageLabel_gs.config(text=self.rpssl.winString)
 
@@ -540,10 +540,10 @@ class RPSSLGui:
                         font=("sans",20), bg="white", justify=tkinter.CENTER)
 
         ## SCORE LABELS #######################################################
-        self.botLabel_gs = tkinter.Label(self.canvas, text=str(self.rpssl.playerOneScore),
+        self.botLabel_gs = tkinter.Label(self.canvas, text=str(self.rpssl.playerTwoScore),
               width=3, font=("sans",30), bg="white", justify=tkinter.CENTER)
 
-        self.humanLabel_gs = tkinter.Label(self.canvas, text=str(self.rpssl.playerTwoScore),
+        self.humanLabel_gs = tkinter.Label(self.canvas, text=str(self.rpssl.playerOneScore),
               width=3, font=("sans",30), bg="white", justify=tkinter.CENTER)
 
         ## BOT CHOICE IMAGE ###################################################
