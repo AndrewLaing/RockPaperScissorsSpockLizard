@@ -4,12 +4,12 @@ Requires >= Python3.5 and the TKinter library.<br /><br />
 The program is run via the playGame.py file<br />
 # Screenshots
 ![alt text](RPSSL.jpg)
-<br />Main Screen<br />
+<br />Main Screen<br /><br />
 ![alt text](RPSSL_1.jpg)
-<br />Gameplay 1<br />
+<br />Gameplay 1<br /><br />
 ![alt text](RPSSL_2.jpg)
-<br />Gameplay 2<br />
+<br />Gameplay 2<br /><br />
 ![alt text](RPSSL_3.jpg)
-<br />Options<br />
+<br />Options<br /><br />
 ![alt text](RPSSL_4.jpg)
 <br />Help<br />
